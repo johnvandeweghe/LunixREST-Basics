@@ -3,14 +3,13 @@ require("vendor/autoload.php");
 //So we can use the namespace endpoint factory
 require("src/Endpoints/v1_0/helloworld.php");
 
-use LunixREST\AccessControl\PublicAccessControl;
-use LunixREST\Endpoint\NamespaceEndpointFactory;
-use LunixREST\APIRequest\RequestFactory\BasicRequestFactory;
-use LunixREST\APIResponse\DefaultResponseFactory;
-use LunixREST\Server\GenericServer;
 use LunixREST\Server\HTTPServer;
-use LunixREST\Server\Server;
-use LunixREST\Throttle\NoThrottle;
+use LunixRESTBasics\AccessControl\PublicAccessControl;
+use LunixRESTBasics\Endpoint\NamespaceEndpointFactory;
+use LunixRESTBasics\APIRequest\RequestFactory\BasicRequestFactory;
+use LunixRESTBasics\APIResponse\DefaultResponseFactory;
+use LunixREST\Server\GenericServer;
+use LunixRESTBasics\Throttle\NoThrottle;
 
 //Ignore whatever key is passed and give access anyway
 $accessControl = new PublicAccessControl();

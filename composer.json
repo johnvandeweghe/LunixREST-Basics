@@ -1,5 +1,5 @@
 {
-  "name": "johnvandeweghe/lunixrest-basocs",
+  "name": "johnvandeweghe/lunixrest-basics",
   "description": "Basic implementations of LunixREST",
   "require-dev": {
     "phpunit/phpunit": "^5.7"

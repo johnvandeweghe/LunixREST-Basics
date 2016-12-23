@@ -7,7 +7,7 @@
         }
     ],
     "require": {
-      "johnvandeweghe/lunixrest": "dev-master"
+      "johnvandeweghe/lunixrest-basics": "dev-master"
     },
     "autoload": {
         "psr-4": {
