@@ -4,7 +4,6 @@ namespace LunixRESTBasics\Endpoint;
 use Doctrine\ORM\EntityManager;
 use LunixREST\Endpoint\Endpoint;
 use LunixREST\Endpoint\Exceptions\UnknownEndpointException;
-use LunixREST\Endpoint\NamespaceEndpointFactory;
 
 /**
  * Assumes all endpoints in the $endpointNamespace are DoctrineEndpoints (and does not check) and instantiates
