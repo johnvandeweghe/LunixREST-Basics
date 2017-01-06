@@ -21,15 +21,21 @@ class AllAccessConfigurationListAccessControl implements AccessControl
      * @var string
      */
     protected $configKey;
+    /**
+     * @var string
+     */
+    private $namespace;
 
     /**
      * @param Configuration $config a config that has a list of valid keys in the stored $configKey
+     * @param $namespace
      * @param string $configKey key to use when accessing the list of valid keys from the $config
      */
-    public function __construct(Configuration $config, $configKey = 'keys')
+    public function __construct(Configuration $config, string $namespace, string $configKey = 'keys')
     {
         $this->config = $config;
         $this->configKey = $configKey;
+        $this->namespace = $namespace;
     }
 
     /**
@@ -47,6 +53,6 @@ class AllAccessConfigurationListAccessControl implements AccessControl
      */
     public function validateKey($apiKey)
     {
-        return in_array($apiKey, $this->config->get($this->configKey, null));
+        return in_array($apiKey, $this->config->get($this->configKey, $this->namespace));
     }
 }

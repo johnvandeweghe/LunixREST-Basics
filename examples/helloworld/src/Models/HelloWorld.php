@@ -1,9 +1,7 @@
 <?php
 namespace HelloWorld\Models;
 
-use LunixREST\APIResponse\ResponseData;
-
-class HelloWorld implements ResponseData
+class HelloWorld
 {
 
     protected $helloWorld = "HelloWorld";

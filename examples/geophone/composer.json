@@ -6,8 +6,9 @@
             "email": "vandeweghe@lunixlabs.com"
         }
     ],
+    "minimum-stability": "dev",
     "require": {
-      "johnvandeweghe/lunixrest": "dev-master"
+        "johnvandeweghe/lunixrest-basics": "dev-master"
     },
     "autoload": {
         "psr-4": {

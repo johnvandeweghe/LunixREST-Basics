@@ -3,6 +3,7 @@ require("vendor/autoload.php");
 //So we can use the namespace endpoint factory
 require("src/Endpoints/v1_0/helloworld.php");
 
+use LunixREST\Server\GenericRouter;
 use LunixREST\Server\HTTPServer;
 use LunixRESTBasics\AccessControl\PublicAccessControl;
 use LunixRESTBasics\Endpoint\NamespaceEndpointFactory;
@@ -23,7 +24,7 @@ $responseFactory = new DefaultResponseFactory();
 //Load any endpoints from the namespace listed
 $endpointFactory = new NamespaceEndpointFactory("\\HelloWorld\\Endpoints");
 
-$router = new \LunixREST\Server\GenericRouter($endpointFactory);
+$router = new GenericRouter($endpointFactory);
 
 $server = new GenericServer($accessControl, $throttle, $responseFactory, $router);
 
@@ -32,8 +33,7 @@ $requestFactory = new BasicRequestFactory();
 
 $httpServer = new HTTPServer($server, $requestFactory);
 
-$serverRequest = GuzzleHttp\
+$serverRequest = GuzzleHttp\Psr7\ServerRequest::fromGlobals();
 
 //Run to test: GET /1.0/public/helloworld.json
-$httpServer->handleSAPIRequest($_SERVER['REQUEST_METHOD'], getallheaders(), file_get_contents("php://input"),
-    $_SERVER['REMOTE_ADDR'], $_SERVER['REQUEST_URI']);
+HTTPServer::dumpResponse($httpServer->handleRequest($serverRequest, new GuzzleHttp\Psr7\Response()));
