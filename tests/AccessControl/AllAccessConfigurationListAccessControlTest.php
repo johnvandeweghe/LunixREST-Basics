@@ -6,13 +6,13 @@ class AllAccessConfigurationListAccessControlTest extends \PHPUnit_Framework_Tes
 
     public function testValidateKey()
     {
-        $accessKeys = ['public', 'notPublic', 'literallyAnyString', md5(rand())];
+        $accessKeys = ["namespace" => ['public', 'notPublic', 'literallyAnyString', md5(rand())]];
         $keysListIniConfig = $this->getMockBuilder('\LunixRESTBasics\Configuration\INIConfiguration')
             ->disableOriginalConstructor()
             ->getMock();
         $keysListIniConfig->method('get')->willReturn($accessKeys);
 
-        $access = new AllAccessConfigurationListAccessControl($keysListIniConfig);
+        $access = new AllAccessConfigurationListAccessControl($keysListIniConfig, "namespace");
 
         foreach ($accessKeys as $accessKey) {
             $this->assertTrue($access->validateKey($accessKey),
@@ -25,13 +25,13 @@ class AllAccessConfigurationListAccessControlTest extends \PHPUnit_Framework_Tes
 
     public function testValidateAccess()
     {
-        $accessKeys = ['public', 'notPublic', 'literallyAnyString', md5(rand())];
+        $accessKeys = ["namespace" => ['public', 'notPublic', 'literallyAnyString', md5(rand())]];
         $keysListIniConfig = $this->getMockBuilder('\LunixRESTBasics\Configuration\INIConfiguration')
             ->disableOriginalConstructor()
             ->getMock();
         $keysListIniConfig->method('get')->willReturn($accessKeys);
 
-        $access = new AllAccessConfigurationListAccessControl($keysListIniConfig);
+        $access = new AllAccessConfigurationListAccessControl($keysListIniConfig, "namespace");
 
         foreach ($accessKeys as $accessKey) {
             $validRequest = $this->getMockBuilder('\LunixREST\APIRequest\APIRequest')

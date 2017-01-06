@@ -1,5 +1,5 @@
 <?php
-namespace LunixREST\APIRequest\RequestData;
+namespace LunixRESTBasics\APIRequest\RequestData;
 
 class JSONRequestDataTest extends \PHPUnit_Framework_TestCase
 {
@@ -16,7 +16,7 @@ class JSONRequestDataTest extends \PHPUnit_Framework_TestCase
     {
         $rawData = 'fgd dfgh dsfhr sdrf hrfytj ';
 
-        $this->expectException('\LunixREST\APIRequest\BodyParser\Exceptions\InvalidRequestDataException');
+        $this->expectException('\LunixRESTBasics\APIRequest\BodyParser\Exceptions\InvalidRequestDataException');
         new JSONRequestData($rawData);
     }
 

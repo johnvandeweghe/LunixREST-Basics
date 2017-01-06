@@ -1,5 +1,5 @@
 <?php
-namespace LunixREST\APIRequest\RequestData;
+namespace LunixRESTBasics\APIRequest\RequestData;
 
 class URLEncodedQueryStringRequestDataTest extends \PHPUnit_Framework_TestCase
 {
