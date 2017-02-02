@@ -12,15 +12,13 @@
   ],
   "require": {
     "php": "^7.1",
-    "johnvandeweghe/lunixrest": "dev-master",
-    "guzzlehttp/psr7": "^1.3"
+    "johnvandeweghe/lunixrest": "^0.7",
+    "guzzlehttp/psr7": "^1.3",
+    "doctrine/orm": "v2.5.5"
   },
   "autoload": {
     "psr-4": {
       "LunixRESTBasics\\": "src/"
     }
-  },
-  "suggest": {
-    "doctrine/doctrine": "Required for implementations that use DoctrineEndpointFactory and DoctrineEndpoint"
   }
 }
