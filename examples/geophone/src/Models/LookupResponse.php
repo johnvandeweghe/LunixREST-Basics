@@ -1,13 +1,13 @@
 <?php
 namespace GeoPhone\Models;
 
-use LunixREST\APIResponse\ResponseData;
+use LunixREST\APIResponse\APIResponseData;
 
 /**
  * Class GeoPhone
  * @package GeoPhone\Models
  */
-class LookupResponse implements ResponseData
+class LookupResponse
 {
     protected $city;
     protected $state;
@@ -25,15 +25,15 @@ class LookupResponse implements ResponseData
 
 
     /**
-     * @return array
+     * @return APIResponseData
      */
-    public function getAsAssociativeArray(): array
+    public function getAsResponseData(): APIResponseData
     {
-        return [
+        return new APIResponseData([
             "location" => [
                 'city' => $this->city,
                 'state' => $this->state
             ]
-        ];
+        ]);
     }
 }
