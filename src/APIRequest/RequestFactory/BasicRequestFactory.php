@@ -14,6 +14,6 @@ class BasicRequestFactory extends DefaultRequestFactory
 {
     public function __construct()
     {
-        parent::__construct(new BasicURLParser(new MIMEFileProvider()));
+        parent::__construct(new BasicURLParser());
     }
 }

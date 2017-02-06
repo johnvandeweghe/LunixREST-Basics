@@ -4,7 +4,6 @@ namespace LunixRESTBasics\APIRequest\URLParser;
 use LunixREST\APIRequest\URLParser\Exceptions\InvalidRequestURLException;
 use LunixREST\APIRequest\URLParser\ParsedURL;
 use LunixREST\APIRequest\URLParser\URLParser;
-use LunixRESTBasics\APIRequest\MIMEProvider;
 use Psr\Http\Message\UriInterface;
 
 /**
@@ -15,19 +14,11 @@ use Psr\Http\Message\UriInterface;
  */
 class BasicURLParser implements URLParser
 {
-
-    /**
-     * @var MIMEProvider
-     */
-    private $MIMEProvider;
-
     /**
      * BasicURLParser constructor.
-     * @param MIMEProvider $MIMEProvider
      */
-    public function __construct(MIMEProvider $MIMEProvider)
+    public function __construct()
     {
-        $this->MIMEProvider = $MIMEProvider;
     }
 
     /**
@@ -61,7 +52,7 @@ class BasicURLParser implements URLParser
 
         $queryString = $uri->getQuery();
 
-        $mime = $this->MIMEProvider->getByFileExtension($extension);
+        $mime = \GuzzleHttp\Psr7\mimetype_from_extension($extension);
 
         return new ParsedURL($endpoint, $element, $version, $apiKey, $mime ? [$mime] : [], $queryString);
     }

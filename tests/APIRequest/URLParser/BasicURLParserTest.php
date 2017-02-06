@@ -13,10 +13,7 @@ class BasicURLParserTest extends \PHPUnit_Framework_TestCase
         $element = '1000';
         $queryString = "test=query";
 
-        $mockedMIMEProvider = $this->getMockBuilder('\LunixRESTBasics\APIRequest\MIMEProvider')->getMock();
-        $mockedMIMEProvider->method('getByFileExtension')->with($extension)->willReturn($MIMEType);
-
-        $urlParser = new BasicURLParser($mockedMIMEProvider);
+        $urlParser = new BasicURLParser();
 
         $parsedURL = $urlParser->parse(\GuzzleHttp\Psr7\uri_for("/$version/$APIKey/$endpoint/$element.$extension?$queryString"));
 
@@ -30,8 +27,7 @@ class BasicURLParserTest extends \PHPUnit_Framework_TestCase
 
     public function testCreateRequestFromInvalidURL()
     {
-        $mockedMIMEProvider = $this->getMockBuilder('\LunixRESTBasics\APIRequest\MIMEProvider')->getMock();
-        $urlParser = new BasicURLParser($mockedMIMEProvider);
+        $urlParser = new BasicURLParser();
 
         $this->expectException('\LunixREST\APIRequest\URLParser\Exceptions\InvalidRequestURLException');
         $urlParser->parse(\GuzzleHttp\Psr7\uri_for("/admin"));
@@ -47,10 +43,7 @@ class BasicURLParserTest extends \PHPUnit_Framework_TestCase
         $element = null;
         $queryString = "test=query";
 
-        $mockedMIMEProvider = $this->getMockBuilder('\LunixRESTBasics\APIRequest\MIMEProvider')->getMock();
-        $mockedMIMEProvider->method('getByFileExtension')->with($extension)->willReturn($MIMEType);
-
-        $urlParser = new BasicURLParser($mockedMIMEProvider);
+        $urlParser = new BasicURLParser();
 
         $parsedURL = $urlParser->parse(\GuzzleHttp\Psr7\uri_for("/$version/$APIKey/$endpoint.$extension?$queryString"));
 
