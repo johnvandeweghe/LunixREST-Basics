@@ -1,7 +1,7 @@
 <?php
 namespace LunixRESTBasics\Endpoint;
 
-class EntityManagerAwareTraitTest extends \PHPUnit_Framework_TestCase
+class ManagerRegistryAwareTraitTest extends \PHPUnit_Framework_TestCase
 {
     public function testSetManagerRegistryDoesntExplode(){
         $mockedMR = $this->getMockBuilder('\Doctrine\Common\Persistence\ManagerRegistry')->disableOriginalConstructor()->getMock();
