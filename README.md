@@ -2,3 +2,10 @@
 
 # LunixREST-Basics
 Some basic implementations of interfaces from [LunixREST](https://github.com/johnvandeweghe/LunixREST)
+
+Features:
+* Doctrine support for endpoints/endpoint factories
+* JSON response support
+* Basic URL parser
+* Single endpoint endpoint factory
+* Super basic example API implementations
