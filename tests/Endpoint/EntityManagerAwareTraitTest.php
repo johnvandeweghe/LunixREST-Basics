@@ -3,14 +3,14 @@ namespace LunixRESTBasics\Endpoint;
 
 class EntityManagerAwareTraitTest extends \PHPUnit_Framework_TestCase
 {
-    public function testSetEntityManagerDoesntExplode(){
-        $mockedEM = $this->getMockBuilder('\Doctrine\ORM\EntityManager')->disableOriginalConstructor()->getMock();
+    public function testSetManagerRegistryDoesntExplode(){
+        $mockedMR = $this->getMockBuilder('\Doctrine\Common\Persistence\ManagerRegistry')->disableOriginalConstructor()->getMock();
 
         /**
-         * @var $mockedTrait EntityManagerAwareTrait
+         * @var $mockedTrait ManagerRegistryAwareTrait
          */
-        $mockedTrait = $this->getMockForTrait('\LunixRESTBasics\Endpoint\EntityManagerAwareTrait');
+        $mockedTrait = $this->getMockForTrait('\LunixRESTBasics\Endpoint\ManagerRegistryAwareTrait');
 
-        $mockedTrait->setEntityManager($mockedEM);
+        $mockedTrait->setManagerRegistry($mockedMR);
     }
 }
