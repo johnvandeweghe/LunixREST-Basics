@@ -23,7 +23,6 @@ $responseFactory = new \LunixREST\APIResponse\RegisteredResponseFactory([
     'application/json' => new \LunixRESTBasics\APIResponse\JSONResponseDataSerializer()
 ]);
 
-//Load any endpoints from the namespace listed
 $endpointFactory = new SingleEndpointFactory(new HelloWorld\Endpoints\v1_0\helloworld());
 
 $router = new GenericRouter($endpointFactory);
