@@ -1,7 +1,7 @@
 <?php
 namespace LunixRESTBasics\APIRequest\RequestFactory;
 
-class BasicRequestFactoryTest extends \PHPUnit_Framework_TestCase
+class BasicRequestFactoryTest extends \PHPUnit\Framework\TestCase
 {
     public function testUsesDefaultsAndBasic()
     {

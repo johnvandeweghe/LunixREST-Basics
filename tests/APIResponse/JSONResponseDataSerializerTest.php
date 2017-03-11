@@ -3,7 +3,7 @@ namespace LunixRESTBasics\APIResponse;
 
 use LunixREST\APIResponse\APIResponseData;
 
-class JSONResponseTest extends \PHPUnit_Framework_TestCase
+class JSONResponseTest extends \PHPUnit\Framework\TestCase
 {
     public function testGetAsStringReturnsExpectedJSON()
     {

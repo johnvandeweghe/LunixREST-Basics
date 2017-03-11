@@ -3,7 +3,7 @@ namespace LunixRESTBasics\Endpoint;
 
 use Psr\Log\NullLogger;
 
-class ManagerRegistryCachingFactoryTest extends \PHPUnit_Framework_TestCase
+class ManagerRegistryCachingFactoryTest extends \PHPUnit\Framework\TestCase
 {
     public function testSetsManagerRegistryOnEndpoint(){
         $mockedManagerRegistry = $this->getMockBuilder('\Doctrine\Common\Persistence\ManagerRegistry')->disableOriginalConstructor()->getMock();

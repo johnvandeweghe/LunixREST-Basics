@@ -1,7 +1,7 @@
 <?php
 namespace LunixRESTBasics\Endpoint;
 
-class SingleEndpointFactoryTest extends \PHPUnit_Framework_TestCase
+class SingleEndpointFactoryTest extends \PHPUnit\Framework\TestCase
 {
     public function testGetSupportedEndpointsReturnsAnEmptyArray() {
         $mockedEndpoint = $this->getMockBuilder('\LunixREST\Endpoint\Endpoint')->getMock();
