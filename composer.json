@@ -19,9 +19,6 @@
   "autoload": {
     "psr-4": {
       "LunixRESTBasics\\": "src/"
-    },
-    "files": [
-      "src/functions_include.php"
-    ]
+    }
   }
 }
