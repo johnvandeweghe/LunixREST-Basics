@@ -5,6 +5,9 @@ use GeoPhone\Models\GeoPhone;
 use LunixREST\APIResponse\APIResponseData;
 use LunixREST\Endpoint\DefaultEndpoint;
 use LunixREST\APIRequest\APIRequest;
+use LunixREST\Endpoint\Exceptions\ElementNotFoundException;
+use LunixREST\Endpoint\Exceptions\InvalidRequestException;
+use LunixREST\Endpoint\Exceptions\UnsupportedMethodException;
 
 class PhoneNumbers extends DefaultEndpoint
 {
@@ -21,6 +24,13 @@ class PhoneNumbers extends DefaultEndpoint
     }
 
 
+    /**
+     * @param APIRequest $request
+     * @return APIResponseData
+     * @throws UnsupportedMethodException
+     * @throws ElementNotFoundException
+     * @throws InvalidRequestException
+     */
     public function get(APIRequest $request): APIResponseData
     {
         return $this->geoPhone->lookupNumber($request->getElement())->getAsResponseData();
