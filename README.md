@@ -37,11 +37,11 @@ This project is listed in [Packigist](https://packagist.org/packages/johnvandewe
 ``` composer require johnvandeweghe/lunixrest-basics ```
 
 # Usage TODO
-## JSON
+## JSON Requests/Responses
 ### Requests
 JSONHTTPServer
 ### Responses
 JSONResponseDataSerializer
 ## Doctrine
 ### ManagerRepository
-### Endpont/EndpointFactory
+## Endpont/EndpointFactory
