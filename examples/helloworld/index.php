@@ -3,10 +3,11 @@ require("vendor/autoload.php");
 //So we can use the namespace endpoint factory
 require("src/Endpoints/v1_0/helloworld.php");
 
-use LunixREST\AccessControl\PublicAccessControl;
-use LunixREST\Server\GenericRouter;
-use LunixREST\Server\HTTPServer;
-use LunixREST\Throttle\NoThrottle;
+use LunixREST\HTTPServer;
+use LunixREST\Server\AccessControl\PublicAccessControl;
+use LunixREST\Server\ResponseFactory\RegisteredResponseFactory;
+use LunixREST\Server\Router\GenericRouter;
+use LunixREST\Server\Throttle\NoThrottle;
 use LunixRESTBasics\APIRequest\RequestFactory\BasicRequestFactory;
 use LunixREST\Server\GenericServer;
 use LunixRESTBasics\Endpoint\SingleEndpointFactory;
@@ -19,7 +20,7 @@ $accessControl = new PublicAccessControl();
 $throttle = new NoThrottle();
 
 //Lets support JSON requests by responding with JSON
-$responseFactory = new \LunixREST\APIResponse\RegisteredResponseFactory([
+$responseFactory = new RegisteredResponseFactory([
     'application/json' => new \LunixRESTBasics\APIResponse\JSONResponseDataSerializer()
 ]);
 

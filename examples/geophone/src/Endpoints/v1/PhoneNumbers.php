@@ -2,12 +2,13 @@
 namespace GeoPhone\Endpoints\v1;
 
 use GeoPhone\Models\GeoPhone;
-use LunixREST\APIResponse\APIResponseData;
-use LunixREST\Endpoint\DefaultEndpoint;
-use LunixREST\APIRequest\APIRequest;
-use LunixREST\Endpoint\Exceptions\ElementNotFoundException;
-use LunixREST\Endpoint\Exceptions\InvalidRequestException;
-use LunixREST\Endpoint\Exceptions\UnsupportedMethodException;
+use LunixREST\Server\APIRequest\APIRequest;
+use LunixREST\Server\APIResponse\APIResponseData;
+use LunixREST\Server\Router\Endpoint\DefaultEndpoint;
+use LunixREST\Server\Router\Endpoint\Exceptions\ElementNotFoundException;
+use LunixREST\Server\Router\Endpoint\Exceptions\EndpointExecutionException;
+use LunixREST\Server\Router\Endpoint\Exceptions\InvalidRequestException;
+use LunixREST\Server\Router\Endpoint\Exceptions\UnsupportedMethodException;
 
 class PhoneNumbers extends DefaultEndpoint
 {
@@ -23,10 +24,10 @@ class PhoneNumbers extends DefaultEndpoint
         $this->geoPhone = $geoPhone;
     }
 
-
     /**
      * @param APIRequest $request
      * @return APIResponseData
+     * @throws EndpointExecutionException
      * @throws UnsupportedMethodException
      * @throws ElementNotFoundException
      * @throws InvalidRequestException

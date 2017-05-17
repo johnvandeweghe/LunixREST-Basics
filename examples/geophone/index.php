@@ -3,12 +3,13 @@ require("vendor/autoload.php");
 
 use GeoPhone\EndpointFactory\EndpointFactory;
 use GeoPhone\Models\GeoPhone;
-use LunixREST\AccessControl\AllAccessConfigurationListAccessControl;
 use LunixREST\Configuration\INIConfiguration;
-use LunixREST\Server\GenericRouter;
+use LunixREST\HTTPServer;
+use LunixREST\Server\AccessControl\AllAccessConfigurationListAccessControl;
 use LunixREST\Server\GenericServer;
-use LunixREST\Server\HTTPServer;
-use LunixREST\Throttle\NoThrottle;
+use LunixREST\Server\ResponseFactory\RegisteredResponseFactory;
+use LunixREST\Server\Router\GenericRouter;
+use LunixREST\Server\Throttle\NoThrottle;
 use LunixRESTBasics\APIRequest\RequestFactory\BasicRequestFactory;
 
 //Load an access control that gives full access to every key in config/api_keys.ini
@@ -18,7 +19,7 @@ $accessControl = new AllAccessConfigurationListAccessControl(new INIConfiguratio
 $throttle = new NoThrottle();
 
 //Lets support JSON requests by responding with JSON
-$responseFactory = new \LunixREST\APIResponse\RegisteredResponseFactory([
+$responseFactory = new RegisteredResponseFactory([
     'application/json' => new \LunixRESTBasics\APIResponse\JSONResponseDataSerializer()
 ]);
 

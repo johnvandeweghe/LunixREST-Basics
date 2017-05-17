@@ -3,10 +3,11 @@ namespace GeoPhone\EndpointFactory;
 
 use GeoPhone\Endpoints\v1\PhoneNumbers;
 use GeoPhone\Models\GeoPhone;
-use LunixREST\Endpoint\Endpoint;
-use LunixREST\Endpoint\Exceptions\UnknownEndpointException;
+use LunixREST\Server\Router\Endpoint\Endpoint;
+use LunixREST\Server\Router\EndpointFactory\Exceptions\UnableToCreateEndpointException;
+use LunixREST\Server\Router\EndpointFactory\Exceptions\UnknownEndpointException;
 
-class EndpointFactory implements \LunixREST\Endpoint\EndpointFactory
+class EndpointFactory implements \LunixREST\Server\Router\EndpointFactory\EndpointFactory
 {
 
     protected $geoPhone;
@@ -20,6 +21,7 @@ class EndpointFactory implements \LunixREST\Endpoint\EndpointFactory
      * @param string $name
      * @param string $version
      * @return Endpoint
+     * @throws UnableToCreateEndpointException
      * @throws UnknownEndpointException
      */
     public function getEndpoint(string $name, string $version): Endpoint
