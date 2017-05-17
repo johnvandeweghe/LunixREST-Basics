@@ -1,7 +1,7 @@
 <?php
 namespace LunixRESTBasics\APIRequest\RequestFactory;
 
-use LunixREST\APIRequest\RequestFactory\DefaultRequestFactory;
+use LunixREST\RequestFactory\DefaultRequestFactory;
 use LunixRESTBasics\APIRequest\MIMEFileProvider;
 use LunixRESTBasics\APIRequest\URLParser\BasicURLParser;
 

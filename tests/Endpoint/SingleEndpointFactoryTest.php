@@ -4,7 +4,7 @@ namespace LunixRESTBasics\Endpoint;
 class SingleEndpointFactoryTest extends \PHPUnit\Framework\TestCase
 {
     public function testGetSupportedEndpointsReturnsAnEmptyArray() {
-        $mockedEndpoint = $this->getMockBuilder('\LunixREST\Endpoint\Endpoint')->getMock();
+        $mockedEndpoint = $this->getMockBuilder('\LunixREST\Server\Router\Endpoint\Endpoint')->getMock();
 
         $endpointFactory = new SingleEndpointFactory($mockedEndpoint);
         $supportedEndpoints = $endpointFactory->getSupportedEndpoints('');
@@ -12,7 +12,7 @@ class SingleEndpointFactoryTest extends \PHPUnit\Framework\TestCase
         $this->assertEmpty($supportedEndpoints);
     }
     public function testGetEndpointReturnsConstructedEndpoint() {
-        $mockedEndpoint = $this->getMockBuilder('\LunixREST\Endpoint\Endpoint')->getMock();
+        $mockedEndpoint = $this->getMockBuilder('\LunixREST\Server\Router\Endpoint\Endpoint')->getMock();
 
         $endpointFactory = new SingleEndpointFactory($mockedEndpoint);
         $endpoint = $endpointFactory->getEndpoint('', '');

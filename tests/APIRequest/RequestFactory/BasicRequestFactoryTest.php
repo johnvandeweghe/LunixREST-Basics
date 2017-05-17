@@ -8,7 +8,7 @@ class BasicRequestFactoryTest extends \PHPUnit\Framework\TestCase
         $requestFactory = new BasicRequestFactory();
 
         $this->assertInstanceOf('\LunixRESTBasics\APIRequest\URLParser\BasicURLParser', $requestFactory->getURLParser());
-        $this->assertInstanceOf('\LunixREST\APIRequest\HeaderParser\DefaultHeaderParser',
+        $this->assertInstanceOf('\LunixREST\RequestFactory\HeaderParser\DefaultHeaderParser',
             $requestFactory->getHeaderParser());
     }
 }

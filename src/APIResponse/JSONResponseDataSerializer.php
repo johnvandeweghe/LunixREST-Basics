@@ -1,8 +1,8 @@
 <?php
 namespace LunixRESTBasics\APIResponse;
 
-use LunixREST\APIResponse\APIResponseData;
-use LunixREST\APIResponse\APIResponseDataSerializer;
+use LunixREST\Server\APIResponse\APIResponseData;
+use LunixREST\Server\ResponseFactory\APIResponseDataSerializer;
 use Psr\Http\Message\StreamInterface;
 
 /**

@@ -1,9 +1,8 @@
 <?php
 namespace LunixRESTBasics\Endpoint;
 
-use LunixREST\Endpoint\Endpoint;
-use LunixREST\Endpoint\EndpointFactory;
-use LunixREST\Endpoint\Exceptions\UnknownEndpointException;
+use LunixREST\Server\Router\Endpoint\Endpoint;
+use LunixREST\Server\Router\EndpointFactory\EndpointFactory;
 
 class SingleEndpointFactory implements EndpointFactory
 {
@@ -26,7 +25,6 @@ class SingleEndpointFactory implements EndpointFactory
      * @param string $name
      * @param string $version
      * @return Endpoint
-     * @throws UnknownEndpointException
      */
     public function getEndpoint(string $name, string $version): Endpoint
     {

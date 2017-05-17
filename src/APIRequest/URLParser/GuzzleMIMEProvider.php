@@ -1,8 +1,8 @@
 <?php
 namespace LunixRESTBasics\APIRequest\URLParser;
 
-use LunixREST\APIRequest\URLParser\Exceptions\UnableToProvideMIMEException;
-use LunixREST\APIRequest\URLParser\MIMEProvider;
+use LunixREST\RequestFactory\URLParser\Exceptions\UnableToProvideMIMEException;
+use LunixREST\RequestFactory\URLParser\MIMEProvider;
 
 class GuzzleMIMEProvider implements MIMEProvider
 {

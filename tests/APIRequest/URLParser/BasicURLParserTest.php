@@ -29,7 +29,7 @@ class BasicURLParserTest extends \PHPUnit\Framework\TestCase
     {
         $urlParser = new BasicURLParser();
 
-        $this->expectException('\LunixREST\APIRequest\URLParser\Exceptions\InvalidRequestURLException');
+        $this->expectException('\LunixREST\RequestFactory\URLParser\Exceptions\InvalidRequestURLException');
         $urlParser->parse(\GuzzleHttp\Psr7\uri_for("/admin"));
     }
 

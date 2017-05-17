@@ -1,7 +1,7 @@
 <?php
 namespace LunixRESTBasics\Endpoint;
 
-use LunixREST\Endpoint\CachingEndpoint;
+use LunixREST\Server\Router\Endpoint\CachingEndpoint;
 
 abstract class ManagerRegistryCachingEndpoint extends CachingEndpoint
 {

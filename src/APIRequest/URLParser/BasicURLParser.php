@@ -1,7 +1,7 @@
 <?php
 namespace LunixRESTBasics\APIRequest\URLParser;
 
-use LunixREST\APIRequest\URLParser\RegexURLParser\RegexURLParser;
+use LunixREST\RequestFactory\URLParser\RegexURLParser\RegexURLParser;
 
 /**
  * A basic URL parser. Expects URLS in the format:

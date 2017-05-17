@@ -1,7 +1,7 @@
 <?php
 namespace LunixRESTBasics\APIResponse;
 
-use LunixREST\APIResponse\APIResponseData;
+use LunixREST\Server\APIResponse\APIResponseData;
 
 class JSONResponseTest extends \PHPUnit\Framework\TestCase
 {
