@@ -12,7 +12,7 @@
   ],
   "require": {
     "php": "^7.1",
-    "johnvandeweghe/lunixrest": "^2",
+    "johnvandeweghe/lunixrest": "^3.0.0",
     "guzzlehttp/psr7": "^1.3",
     "doctrine/common": "v2.7.2"
   },
