@@ -2,7 +2,6 @@
 namespace LunixRESTBasics\APIRequest\RequestFactory;
 
 use LunixREST\RequestFactory\DefaultRequestFactory;
-use LunixRESTBasics\APIRequest\MIMEFileProvider;
 use LunixRESTBasics\APIRequest\URLParser\BasicURLParser;
 
 /**

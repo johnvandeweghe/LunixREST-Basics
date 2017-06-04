@@ -10,6 +10,7 @@ use Psr\Log\LoggerInterface;
 /**
  * Class ManagerRegistryCachingEndpointFactory
  * @package LunixRESTBasics\Endpoint
+ * @deprecated in favor of the actual EndpointFactory injecting the ManagerRegistry.
  */
 abstract class ManagerRegistryCachingEndpointFactory extends CachingEndpointFactory
 {

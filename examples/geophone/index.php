@@ -5,7 +5,8 @@ use GeoPhone\EndpointFactory\EndpointFactory;
 use GeoPhone\Models\GeoPhone;
 use LunixREST\Configuration\INIConfiguration;
 use LunixREST\HTTPServer;
-use LunixREST\Server\AccessControl\AllAccessConfigurationListAccessControl;
+use LunixREST\Server\AccessControl\AllAccessKeyRepositoryAccessControl;
+use LunixREST\Server\AccessControl\KeyRepository\ConfigurationKeyRepository;
 use LunixREST\Server\GenericServer;
 use LunixREST\Server\ResponseFactory\RegisteredResponseFactory;
 use LunixREST\Server\Router\GenericRouter;
@@ -13,7 +14,9 @@ use LunixREST\Server\Throttle\NoThrottle;
 use LunixRESTBasics\APIRequest\RequestFactory\BasicRequestFactory;
 
 //Load an access control that gives full access to every key in config/api_keys.ini
-$accessControl = new AllAccessConfigurationListAccessControl(new INIConfiguration("config/api_keys.ini"), "GeoPhone", 'keys');
+$accessControl = new AllAccessKeyRepositoryAccessControl(
+    new ConfigurationKeyRepository(new INIConfiguration("config/api_keys.ini"), "GeoPhone", 'keys')
+);
 
 //Don't throttle requests
 $throttle = new NoThrottle();

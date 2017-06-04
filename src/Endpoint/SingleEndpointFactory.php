@@ -4,6 +4,11 @@ namespace LunixRESTBasics\Endpoint;
 use LunixREST\Server\Router\Endpoint\Endpoint;
 use LunixREST\Server\Router\EndpointFactory\EndpointFactory;
 
+/**
+ * For when you just want a single endpoint to respond to all requests.
+ * Class SingleEndpointFactory
+ * @package LunixRESTBasics\Endpoint
+ */
 class SingleEndpointFactory implements EndpointFactory
 {
 
